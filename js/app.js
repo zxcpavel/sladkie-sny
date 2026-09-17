@@ -20,16 +20,16 @@ var CATS = {
 };
 
 var ROOMS = [
-  {id:"r1",category:"Стандарт",title:"Стандарт с видом во двор",price:2500,area:18,capacity:2,characteristics:["Двуспальная кровать","Wi-Fi","Кондиционер","Санузел"]},
-  {id:"r2",category:"Стандарт",title:"Стандарт с двумя кроватями",price:2800,area:20,capacity:2,characteristics:["2 отдельные кровати","Wi-Fi","Телевизор","Санузел"]},
-  {id:"r3",category:"Комфорт",title:"Комфорт с видом на парк",price:3800,area:24,capacity:2,characteristics:["Двуспальная кровать","Wi-Fi","Мини-бар","Балкон"]},
-  {id:"r4",category:"Комфорт",title:"Комфорт делюкс",price:4200,area:26,capacity:3,characteristics:["Кровать + диван","Wi-Fi","Кофемашина","Халаты"]},
-  {id:"r5",category:"Люкс",title:"Люкс с гостиной",price:7500,area:42,capacity:2,characteristics:["Спальня и гостиная","Джакузи","Мини-бар","Вид на город"]},
-  {id:"r6",category:"Люкс",title:"Президентский люкс",price:9200,area:60,capacity:4,characteristics:["2 спальни","Терраса","Джакузи","Кухня"]},
-  {id:"r7",category:"Семейный",title:"Семейный номер",price:5200,area:32,capacity:4,characteristics:["2 спальни","Детская кроватка","Wi-Fi","Санузел"]},
-  {id:"r8",category:"Семейный",title:"Семейный делюкс",price:5800,area:38,capacity:5,characteristics:["3 кровати","Кухонный уголок","Балкон","Wi-Fi"]},
-  {id:"r9",category:"Стандарт",title:"Стандарт эконом",price:2100,area:16,capacity:1,characteristics:["Односпальная кровать","Wi-Fi","Санузел"]},
-  {id:"r10",category:"Комфорт",title:"Комфорт угловой",price:4000,area:25,capacity:2,characteristics:["Двуспальная кровать","Wi-Fi","Вид на парк","Кондиционер"]}
+  {id:"r1",category:"Стандарт",title:"Стандарт с видом во двор",price:2500,area:18,capacity:2,characteristics:["Двуспальная кровать","Wi-Fi","Кондиционер","Санузел"],image:"images/rooms/r1.jpg"},
+  {id:"r2",category:"Стандарт",title:"Стандарт с двумя кроватями",price:2800,area:20,capacity:2,characteristics:["2 отдельные кровати","Wi-Fi","Телевизор","Санузел"],image:"images/rooms/r2.jpg"},
+  {id:"r3",category:"Комфорт",title:"Комфорт с видом на парк",price:3800,area:24,capacity:2,characteristics:["Двуспальная кровать","Wi-Fi","Мини-бар","Балкон"],image:"images/rooms/r3.jpg"},
+  {id:"r4",category:"Комфорт",title:"Комфорт делюкс",price:4200,area:26,capacity:3,characteristics:["Кровать + диван","Wi-Fi","Кофемашина","Халаты"],image:"images/rooms/r4.jpg"},
+  {id:"r5",category:"Люкс",title:"Люкс с гостиной",price:7500,area:42,capacity:2,characteristics:["Спальня и гостиная","Джакузи","Мини-бар","Вид на город"],image:"images/rooms/r5.jpg"},
+  {id:"r6",category:"Люкс",title:"Президентский люкс",price:9200,area:60,capacity:4,characteristics:["2 спальни","Терраса","Джакузи","Кухня"],image:"images/rooms/r6.jpg"},
+  {id:"r7",category:"Семейный",title:"Семейный номер",price:5200,area:32,capacity:4,characteristics:["2 спальни","Детская кроватка","Wi-Fi","Санузел"],image:"images/rooms/r7.jpg"},
+  {id:"r8",category:"Семейный",title:"Семейный делюкс",price:5800,area:38,capacity:5,characteristics:["3 кровати","Кухонный уголок","Балкон","Wi-Fi"],image:"images/rooms/r8.jpg"},
+  {id:"r9",category:"Стандарт",title:"Стандарт эконом",price:2100,area:16,capacity:1,characteristics:["Односпальная кровать","Wi-Fi","Санузел"],image:"images/rooms/r9.jpg"},
+  {id:"r10",category:"Комфорт",title:"Комфорт угловой",price:4000,area:25,capacity:2,characteristics:["Двуспальная кровать","Wi-Fi","Вид на парк","Кондиционер"],image:"images/rooms/r10.jpg"}
 ];
 
 var CONTACTS = {
@@ -120,9 +120,18 @@ function roomSvg(category){
     '<text x="26" y="145" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#fff" font-weight="700">' + category + '</text>' +
   '</svg>';
 }
+// Возвращает разметку картинки номера: если у номера указано поле image —
+// вставляется настоящее фото, а если файл не найден (или image не задан),
+// автоматически подставляется прежняя SVG-заглушка по категории.
+function roomImg(r){
+  if(!r.image) return roomSvg(r.category);
+  var fallback = roomSvg(r.category).replace(/"/g, '&quot;');
+  return '<img src="' + esc(r.image) + '" alt="' + esc(r.title) + '" ' +
+    'onerror="this.onerror=null;this.outerHTML=&quot;' + fallback + '&quot;;">';
+}
 function roomCardHtml(r){
   return '<div class="card">' +
-    '<div class="room-img">' + roomSvg(r.category) + '</div>' +
+    '<div class="room-img">' + roomImg(r) + '</div>' +
     '<div class="card-body">' +
       '<span class="cat">' + esc(r.category) + '</span>' +
       '<div class="title">' + esc(r.title) + '</div>' +
@@ -340,7 +349,7 @@ function initBooking(){
   }
 
   document.getElementById("roomSummary").innerHTML =
-    roomSvg(room.category).replace('viewBox="0 0 300 170"','viewBox="0 0 300 170" width="110" height="74"') +
+    '<div class="room-img" style="width:110px;height:74px;flex:none;">' + roomImg(room) + '</div>' +
     '<div><div style="font-weight:700;">' + esc(room.title) + '</div>' +
     '<div class="muted">' + esc(room.category) + ' · ' + room.area + ' м² · до ' + room.capacity + ' гостей</div>' +
     '<div class="price">' + room.price + ' ₽ / сутки</div></div>';
