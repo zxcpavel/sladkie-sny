@@ -20,16 +20,16 @@ var CATS = {
 };
 
 var ROOMS = [
-  {id:"r1",category:"Стандарт",title:"Стандарт с видом во двор",price:2500,area:18,capacity:2,characteristics:["Двуспальная кровать","Wi-Fi","Кондиционер","Санузел"],image:"images/rooms/r1.jpg"},
-  {id:"r2",category:"Стандарт",title:"Стандарт с двумя кроватями",price:2800,area:20,capacity:2,characteristics:["2 отдельные кровати","Wi-Fi","Телевизор","Санузел"],image:"images/rooms/r2.webp"},
-  {id:"r3",category:"Комфорт",title:"Комфорт с видом на парк",price:3800,area:24,capacity:2,characteristics:["Двуспальная кровать","Wi-Fi","Мини-бар","Балкон"],image:"images/rooms/r3.jpg"},
-  {id:"r4",category:"Комфорт",title:"Комфорт делюкс",price:4200,area:26,capacity:3,characteristics:["Кровать + диван","Wi-Fi","Кофемашина","Халаты"],image:"images/rooms/r4.jpg"},
-  {id:"r5",category:"Люкс",title:"Люкс с гостиной",price:7500,area:42,capacity:2,characteristics:["Спальня и гостиная","Джакузи","Мини-бар","Вид на город"],image:"images/rooms/r5.jpg"},
-  {id:"r6",category:"Люкс",title:"Президентский люкс",price:9200,area:60,capacity:4,characteristics:["2 спальни","Терраса","Джакузи","Кухня"],image:"images/rooms/r6.jpg"},
-  {id:"r7",category:"Семейный",title:"Семейный номер",price:5200,area:32,capacity:4,characteristics:["2 спальни","Детская кроватка","Wi-Fi","Санузел"],image:"images/rooms/r7.jpg"},
-  {id:"r8",category:"Семейный",title:"Семейный делюкс",price:5800,area:38,capacity:5,characteristics:["3 кровати","Кухонный уголок","Балкон","Wi-Fi"],image:"images/rooms/r8.jpg"},
-  {id:"r9",category:"Стандарт",title:"Стандарт эконом",price:2100,area:16,capacity:1,characteristics:["Односпальная кровать","Wi-Fi","Санузел"],image:"images/rooms/r9.jpg"},
-  {id:"r10",category:"Комфорт",title:"Комфорт угловой",price:4000,area:25,capacity:2,characteristics:["Двуспальная кровать","Wi-Fi","Вид на парк","Кондиционер"],image:"images/rooms/r10.jpg"}
+  {id:"r1",category:"Стандарт",title:"Стандарт с видом во двор",price:2500,area:18,capacity:2,characteristics:["Двуспальная кровать","Wi-Fi","Кондиционер","Санузел"],image:"images/rooms/r1.JPG"},
+  {id:"r2",category:"Стандарт",title:"Стандарт с двумя кроватями",price:2800,area:20,capacity:2,characteristics:["2 отдельные кровати","Wi-Fi","Телевизор","Санузел"],image:"images/rooms/r2.WEBP"},
+  {id:"r3",category:"Комфорт",title:"Комфорт с видом на парк",price:3800,area:24,capacity:2,characteristics:["Двуспальная кровать","Wi-Fi","Мини-бар","Балкон"],image:"images/rooms/r3.JPG"},
+  {id:"r4",category:"Комфорт",title:"Комфорт делюкс",price:4200,area:26,capacity:3,characteristics:["Кровать + диван","Wi-Fi","Кофемашина","Халаты"],image:"images/rooms/r4.JPG"},
+  {id:"r5",category:"Люкс",title:"Люкс с гостиной",price:7500,area:42,capacity:2,characteristics:["Спальня и гостиная","Джакузи","Мини-бар","Вид на город"],image:"images/rooms/r5.JPG"},
+  {id:"r6",category:"Люкс",title:"Президентский люкс",price:9200,area:60,capacity:4,characteristics:["2 спальни","Терраса","Джакузи","Кухня"],image:"images/rooms/r6.JPG"},
+  {id:"r7",category:"Семейный",title:"Семейный номер",price:5200,area:32,capacity:4,characteristics:["2 спальни","Детская кроватка","Wi-Fi","Санузел"],image:"images/rooms/r7.JPG"},
+  {id:"r8",category:"Семейный",title:"Семейный делюкс",price:5800,area:38,capacity:5,characteristics:["3 кровати","Кухонный уголок","Балкон","Wi-Fi"],image:"images/rooms/r8.JPG"},
+  {id:"r9",category:"Стандарт",title:"Стандарт эконом",price:2100,area:16,capacity:1,characteristics:["Односпальная кровать","Wi-Fi","Санузел"],image:"images/rooms/r9.JPG"},
+  {id:"r10",category:"Комфорт",title:"Комфорт угловой",price:4000,area:25,capacity:2,characteristics:["Двуспальная кровать","Wi-Fi","Вид на парк","Кондиционер"],image:"images/rooms/r10.JPG"}
 ];
 
 var CONTACTS = {
