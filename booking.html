@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бронирование номера — Сладкие сны</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site"><div class="site-inner">
+  <div class="brand"><span class="name">🛎 Сладкие сны</span><span class="slogan">Ваш уютный отдых начинается здесь</span></div>
+  <nav class="main">
+    <a href="index.html">Главная</a>
+    <a href="catalog.html" class="active">Каталог</a>
+  </nav>
+</div></header>
+
+<main id="bookingArea">
+  <h2 class="section-title">Бронирование номера</h2>
+  <div class="booking-room" id="roomSummary"></div>
+  <div class="avail-note" id="availNote"></div>
+  <div id="formHolder"></div>
+</main>
+
+<footer class="site" id="siteFooter"></footer>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Панель администратора — Сладкие сны</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site"><div class="site-inner">
+  <div class="brand"><span class="name">🛎 Сладкие сны</span><span class="slogan">Ваш уютный отдых начинается здесь</span></div>
+  <nav class="main">
+    <a href="index.html">Главная</a>
+    <a href="catalog.html">Каталог</a>
+  </nav>
+</div></header>
+
+<main>
+  <div id="adminLogin">
+    <h2 class="section-title">Вход администратора</h2>
+    <form class="box login-box">
+      <div class="err" id="adminLoginError" style="margin-bottom:10px;"></div>
+      <div class="field"><label>Логин</label><input type="text" name="login" autocomplete="off"></div>
+      <div class="field"><label>Пароль</label><input type="password" name="password" autocomplete="off"></div>
+      <button type="submit" class="btn" style="width:100%;">Войти</button>
+    </form>
+  </div>
+  <div id="adminPanel" style="display:none;"></div>
+</main>
+
+<footer class="site" id="siteFooter"></footer>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
