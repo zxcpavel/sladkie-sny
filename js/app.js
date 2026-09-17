@@ -21,7 +21,7 @@ var CATS = {
 
 var ROOMS = [
   {id:"r1",category:"Стандарт",title:"Стандарт с видом во двор",price:2500,area:18,capacity:2,characteristics:["Двуспальная кровать","Wi-Fi","Кондиционер","Санузел"],image:"images/rooms/r1.jpg"},
-  {id:"r2",category:"Стандарт",title:"Стандарт с двумя кроватями",price:2800,area:20,capacity:2,characteristics:["2 отдельные кровати","Wi-Fi","Телевизор","Санузел"],image:"images/rooms/r2.jpg"},
+  {id:"r2",category:"Стандарт",title:"Стандарт с двумя кроватями",price:2800,area:20,capacity:2,characteristics:["2 отдельные кровати","Wi-Fi","Телевизор","Санузел"],image:"images/rooms/r2.webp"},
   {id:"r3",category:"Комфорт",title:"Комфорт с видом на парк",price:3800,area:24,capacity:2,characteristics:["Двуспальная кровать","Wi-Fi","Мини-бар","Балкон"],image:"images/rooms/r3.jpg"},
   {id:"r4",category:"Комфорт",title:"Комфорт делюкс",price:4200,area:26,capacity:3,characteristics:["Кровать + диван","Wi-Fi","Кофемашина","Халаты"],image:"images/rooms/r4.jpg"},
   {id:"r5",category:"Люкс",title:"Люкс с гостиной",price:7500,area:42,capacity:2,characteristics:["Спальня и гостиная","Джакузи","Мини-бар","Вид на город"],image:"images/rooms/r5.jpg"},
